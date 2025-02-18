@@ -29,5 +29,17 @@
 
       btn.addEventListener('click', bgChange);
     </script>
+
+    <input id="textBox" type="text" />
+    <div id="output"></div>
+    <script>
+    const textBox = document.querySelector("#textBox");
+    const output = document.querySelector("#output");
+    textBox.addEventListener("keydown", (event) => {
+    output.textContent = `You pressed "${event.key}".`;
+    });
+
+    </script>
+
   </body>
 </html>
