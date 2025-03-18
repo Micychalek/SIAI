@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl2.css">
+    <title>Stacja Paliw</title>
+</head>
+<body>
+
+    <section id="baner">
+        <h1>Calodobowa Stacja Paliw</h1>
+    </section>
+    <section id="menu">
+        <a href="stacja.html"><img src="home.png" alt=""></a>
+        <a href="obliczenia.html"><img src="znak.png" alt=""></a>
+        <a href="kwerendy,txt">Pobierz dokumenty</a>
+    </section>
+    <section id="right">
+        <img src="samochod.png" alt="samochod" id="samochod">
+    </section>
+    <section id="left">
+        <div class="container">
+            <h2>Orientacyjny koszt paliwa</h2>
+            
+            <label for="rodzaj">Rodzaj paliwa (1-benzyna, 2-olej napędowy):</label><br>
+            <input type="number" id="rodzaj" min="1" max="2"><br>
+            
+            <label for="litry">Ile litrów?</label><br>
+            <input type="number" id="litry" min="0"><br>
+            
+            <button onclick="obliczKoszt()">OBLICZ</button>
+            
+            <div id="wynik"></div>
+        </div>
+        
+        <script>
+            function obliczKoszt() {
+                let rodzaj = parseInt(document.getElementById("rodzaj").value);
+                let litry = parseFloat(document.getElementById("litry").value);
+                let koszt = 0;
+        
+                if (rodzaj === 1) {
+                    koszt = litry * 4;
+                } else if (rodzaj === 2) {
+                    koszt = litry * 3.5;
+                }
+        
+                document.getElementById("wynik").innerHTML = `Koszt paliwa: ${koszt.toFixed(2)} zł`;
+            }
+        </script>
+    </section>
+    <footer>
+        <p>Strone opracowal: 6969696969</p>
+    </footer>
+    
+</body>
+</html>
